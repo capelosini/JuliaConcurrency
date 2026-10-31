@@ -13,7 +13,9 @@ function operacao_vetorial()
 
     # A macro distribui automaticamente as iterações pelo pool de threads
     @threads for i in 1:10
-        # threadid() retorna qual thread está processando a iteração atual
+        # threadid() retorna qual thread está processando a iteração atual.
+        # No Julia 1.12+, com `-t 4`, os ids vão de 2 a 5 (a thread 1 é
+        # reservada para o pool interativo); use `-t 4,0` para obter 1..4.
         dados[i] = threadid()
         sleep(0.1) # Simulando trabalho
     end

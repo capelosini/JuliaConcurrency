@@ -20,7 +20,7 @@ println("Processos ativos: ", procs())
 end
 
 function executar_distribuido()
-    dados = rand(500, 500)
+    dados = rand(200, 200)
 
     # @spawnat envia o cálculo para um worker específico.
     # Retorna um 'Future' (Promessa inter-processo)
